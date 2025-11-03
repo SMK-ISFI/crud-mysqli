@@ -30,6 +30,10 @@ $hasil = mysqli_query($koneksi, $sql);
       <p class="text-base text-gray-700 leading-relaxed"><?php echo $item["body"] ?></p>
       <div>
         <a href="edit.php?id=<?php echo $item['id'] ?>" class="text-blue-600 font-semibold hover:text-blue-800">Edit</a>
+        <form action="delete.php" method="POST" class="inline">
+          <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
+          <button type="submit" class="text-red-600 hover:text-red-800 bg-transparent font-semibold border-none cursor-pointer">Hapus</button>
+        </form>
       </div>
     </div>
     <?php endwhile; ?>
